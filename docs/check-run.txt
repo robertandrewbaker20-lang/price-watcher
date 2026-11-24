@@ -1,0 +1,30 @@
+Price Watcher local run, 2026-11-24.
+
+Public page
+I opened https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html in headless Chromium.
+The page loaded. The title was "A Light in the Attic | Books to Scrape - Sandbox".
+The parser recorded no price. That page shows pounds and has no JSON-LD product price.
+The tracked run below uses a local product page instead.
+
+Local page
+Server: http://127.0.0.1:8765/products/trail-wool-shirt
+The page is a normal product document with a schema.org Product block.
+First reading: $48.00 at 2026-11-24 04:53:01 UTC
+Second reading, after the page price changed to $36.00: $36.00 at 2026-11-24 04:53:04 UTC
+Alert: Dropped 25.0% (threshold 20%). Logged. Email not sent.
+ALERT_DRY_RUN=1. No email was sent.
+
+SQLite notifications
+36.00  success  Price drop: Trail Wool Shirt now $36.00
+
+Third check, same page, npm run check -- --dry-run
+[price-watcher] Checking active products 2026-11-24T04:53:23.508Z
+- Trail Wool Shirt: unchanged $36.00
+[price-watcher] Done. 1 product(s). recorded 0, unchanged 1, alerts 0, errors 0, email failures 0.
+
+Screenshots
+docs/dashboard-empty.png
+docs/dashboard-first-price.png
+docs/dashboard-alert.png
+docs/dashboard-mobile.png
+docs/check.gif

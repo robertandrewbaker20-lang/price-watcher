@@ -1,0 +1,12 @@
+node_modules
+.next
+data
+.git
+.env*
+*.md
+docs
+tests
+.DS_Store
+*.db
+*.sqlite
+*.sqlite3

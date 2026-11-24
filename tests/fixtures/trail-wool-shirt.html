@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Example Outfitters | Trail Wool Shirt</title>
+    <meta property="og:title" content="Ignored when JSON-LD has a name" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Product",
+            "name": "Trail Wool Shirt",
+            "image": "https://example.com/shirt.jpg",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "48.00",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <p>Shipping from $5.00</p>
+    <p class="price">$9.00</p>
+  </body>
+</html>
